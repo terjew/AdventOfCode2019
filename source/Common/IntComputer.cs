@@ -69,16 +69,10 @@ namespace Common
                     Output(GetOperand(0));
                     break;
                 case Instruction.JumpIfTrue:
-                    if (GetOperand(0) != 0)
-                    {
-                        return (int)GetOperand(1);
-                    }
+                    if (GetOperand(0) != 0) return (int)GetOperand(1);
                     break;
                 case Instruction.JumpIfFalse:
-                    if (GetOperand(0) == 0)
-                    {
-                        return (int)GetOperand(1);
-                    }
+                    if (GetOperand(0) == 0) return (int)GetOperand(1);
                     break;
                 case Instruction.LessThan:
                     Store(GetOperand(0) < GetOperand(1) ? 1 : 0, 2);
