@@ -46,6 +46,11 @@ namespace Common
             memory[outputAddress] = result;
         }
 
+        public void SetMemory(int address, long value)
+        {
+            memory[address] = value;
+        }
+
         private int ExecuteInstruction()
         {
             long opcode = memory[pc];
