@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace AdventOfCode11
 {
-    struct Vec2i : IEquatable<Vec2i>
+    public struct Vec2i : IEquatable<Vec2i>
     {
         public int X { get; }
         public int Y { get; }
@@ -33,9 +33,14 @@ namespace AdventOfCode11
             return HashCode.Combine(X, Y);
         }
 
-        public static Vec2i operator+(Vec2i a, Vec2i b)
+        public static Vec2i operator +(Vec2i a, Vec2i b)
         {
             return new Vec2i(a.X + b.X, a.Y + b.Y);
+        }
+
+        public static Vec2i operator -(Vec2i a, Vec2i b)
+        {
+            return new Vec2i(a.X - b.X, a.Y - b.Y);
         }
 
         public static bool operator==(Vec2i a, Vec2i b)
